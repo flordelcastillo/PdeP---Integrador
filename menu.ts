@@ -1,6 +1,7 @@
+import { leer } from "./main";
 import { mostrarMenuTareas } from "./mostrarMenuTareas";
 import { agregarTareas } from "./agregarTareas";
-import { leer } from "./main";
+import { buscarTareas } from "./buscarTareas";
 
 export function menuPrincipal(): void {
     console.clear();
@@ -18,7 +19,7 @@ export function switchDeMenu(opcion: string): void {
             mostrarMenuTareas();
             break;
         case 2:
-            //buscarTareas();
+            buscarTareas();
             break;
         case 3:
             agregarTareas();

@@ -1,10 +1,8 @@
-import { arrayTareas } from "./arrayTareas";
-import { menuPrincipal } from "./menu";
-import { Tarea } from "./Tarea";
 import { leer } from "./main";
-import { DificultadTarea } from "./Tarea";
-import { pedirDescripcion,pedirDificultad } from "./agregarTareas";
-import { EstadoTarea } from "./Tarea";
+import { menuPrincipal } from "./menu";
+import { arrayTareas } from "./arrayTareas";
+import { Tarea, DificultadTarea, EstadoTarea } from "./Tarea";
+import { pedirDescripcion, pedirDificultad } from "./agregarTareas";
 
 export function mostrarMenuTareas(): void {
   console.clear();
@@ -17,7 +15,7 @@ export function mostrarMenuTareas(): void {
   switchDeMostrarPorEstado(leer("> "));
 }
 
-export function switchDeMostrarPorEstado(opcion: string): void {
+function switchDeMostrarPorEstado(opcion: string): void {
   switch (Number(opcion)) {
     case 0:
       menuPrincipal();
@@ -41,17 +39,17 @@ export function switchDeMostrarPorEstado(opcion: string): void {
   }
 }
 
-export function filtrarPorEstado(estado: string): Tarea[] {
+function filtrarPorEstado(estado: string): Tarea[] {
   return arrayTareas.filter((tarea: Tarea) => tarea.estado === estado);
 }
 
-export function mostrarEncabezado(encabezado: string): void {
+function mostrarEncabezado(encabezado: string): void {
   console.clear();
   console.log(`Estas son todas tus tareas${encabezado}`);
 }
 
 export function mostrarTareas(encabezado: string, tareasParaMostrar: Tarea[]): void {
-  const arrayTarea = tareasParaMostrar || this.tarea;
+  const arrayTarea = tareasParaMostrar;
 
   mostrarEncabezado(encabezado);
 
@@ -73,12 +71,12 @@ export function mostrarTareas(encabezado: string, tareasParaMostrar: Tarea[]): v
     }
     else {
       const opcionNumero = parseInt(opcion, 10);
-      if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTareas.length) {
-        verDetallesTareas(arrayTareas[opcionNumero - 1]);
+      if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length) {
+        verDetallesTareas(arrayTarea[opcionNumero - 1]);
       }
       else {
         console.log("Opción Incorrecta! Por favor, ingresa un número válido.");
-        mostrarTareas(encabezado, arrayTareas);
+        mostrarTareas(encabezado, arrayTarea);
       }
     }
   }
@@ -137,9 +135,9 @@ export function editarTarea(tarea: Tarea): void {
   console.log(`Estás editando la tarea ${tarea.titulo}.\n`);
   console.log("- Si deseas mantener los valores de un atributo, simplemente déjalo en blanco.");
   console.log("- Si deseas dejar en blanco un atributo, escribe un espacio.\n");
-  
-  tarea.editar(pedirDescripcion(),pedirEstado(),pedirDificultad());
-         
+
+  tarea.editar(pedirDescripcion(), pedirEstado(), pedirDificultad());
+
   console.log("\n¡Datos guardados!\n");
   leer("Presione cualquier tecla para continuar...");
   menuPrincipal();

@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.editarTarea = exports.verDetallesTareas = exports.mostrarTareas = exports.mostrarEncabezado = exports.filtrarPorEstado = exports.switchDeMostrarPorEstado = exports.mostrarMenuTareas = void 0;
-var arrayTareas_1 = require("./arrayTareas");
-var menu_1 = require("./menu");
+exports.editarTarea = exports.verDetallesTareas = exports.mostrarTareas = exports.mostrarMenuTareas = void 0;
 var main_1 = require("./main");
+var menu_1 = require("./menu");
+var arrayTareas_1 = require("./arrayTareas");
 var agregarTareas_1 = require("./agregarTareas");
 function mostrarMenuTareas() {
     console.clear();
@@ -39,18 +39,15 @@ function switchDeMostrarPorEstado(opcion) {
             break;
     }
 }
-exports.switchDeMostrarPorEstado = switchDeMostrarPorEstado;
 function filtrarPorEstado(estado) {
     return arrayTareas_1.arrayTareas.filter(function (tarea) { return tarea.estado === estado; });
 }
-exports.filtrarPorEstado = filtrarPorEstado;
 function mostrarEncabezado(encabezado) {
     console.clear();
     console.log("Estas son todas tus tareas".concat(encabezado));
 }
-exports.mostrarEncabezado = mostrarEncabezado;
 function mostrarTareas(encabezado, tareasParaMostrar) {
-    var arrayTarea = tareasParaMostrar || this.tarea;
+    var arrayTarea = tareasParaMostrar;
     mostrarEncabezado(encabezado);
     if (arrayTarea.length === 0) {
         console.log('No hay tareas disponibles.');
@@ -68,12 +65,12 @@ function mostrarTareas(encabezado, tareasParaMostrar) {
         }
         else {
             var opcionNumero = parseInt(opcion, 10);
-            if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTareas_1.arrayTareas.length) {
-                verDetallesTareas(arrayTareas_1.arrayTareas[opcionNumero - 1]);
+            if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length) {
+                verDetallesTareas(arrayTarea[opcionNumero - 1]);
             }
             else {
                 console.log("Opción Incorrecta! Por favor, ingresa un número válido.");
-                mostrarTareas(encabezado, arrayTareas_1.arrayTareas);
+                mostrarTareas(encabezado, arrayTarea);
             }
         }
     }

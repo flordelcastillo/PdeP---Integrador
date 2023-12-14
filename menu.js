@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.switchDeMenu = exports.menuPrincipal = void 0;
+var main_1 = require("./main");
 var mostrarMenuTareas_1 = require("./mostrarMenuTareas");
 var agregarTareas_1 = require("./agregarTareas");
-var main_1 = require("./main");
+var buscarTareas_1 = require("./buscarTareas");
 function menuPrincipal() {
     console.clear();
     console.log("¿Qué deseas hacer?\n");
@@ -20,7 +21,7 @@ function switchDeMenu(opcion) {
             (0, mostrarMenuTareas_1.mostrarMenuTareas)();
             break;
         case 2:
-            //buscarTareas();
+            (0, buscarTareas_1.buscarTareas)();
             break;
         case 3:
             (0, agregarTareas_1.agregarTareas)();
