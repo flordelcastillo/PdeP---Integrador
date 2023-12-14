@@ -137,6 +137,7 @@ export function editarTarea(tarea: Tarea): void {
   console.log(`Estás editando la tarea ${tarea.titulo}.\n`);
   console.log("- Si deseas mantener los valores de un atributo, simplemente déjalo en blanco.");
   console.log("- Si deseas dejar en blanco un atributo, escribe un espacio.\n");
+  
   tarea.editar(pedirDescripcion(),pedirEstado(),pedirDificultad());
          
   console.log("\n¡Datos guardados!\n");

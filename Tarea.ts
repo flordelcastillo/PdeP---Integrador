@@ -36,14 +36,21 @@ export class Tarea {
     }
   }
 
-  editar(nuevaDescripcion: string, nuevoEstado: EstadoTarea, nuevaDificultad: DificultadTarea ): Tarea {
-    return new Tarea(
-      this._titulo,
-      nuevaDescripcion && nuevaDescripcion.trim() !== '' ? nuevaDescripcion : null,
-      nuevoEstado || this._estado,
-      nuevaDificultad || this._dificultad
-    );
+  editar(nuevaDescripcion: string, nuevoEstado: EstadoTarea, nuevaDificultad: DificultadTarea): void {
+    // Actualiza la descripción si se proporciona una nueva descripción no vacía.
+    if (nuevaDescripcion.trim() !== '') {
+      this.descripcion = nuevaDescripcion;
+    }
+    // Actualiza el estado si se proporciona un nuevo estado no vacío.
+    if (nuevoEstado.trim() !== '') {
+      this.estado = this.validarEstado(nuevoEstado);
+    }
+    // Actualiza la dificultad si se proporciona una nueva dificultad no vacía.
+    if (nuevaDificultad.trim() !== '') {
+      this.dificultad = this.validarDificultad(nuevaDificultad);
+    }
   }
+
 
   get titulo(): string {
     return this._titulo;
