@@ -1,6 +1,6 @@
 /* Definición de tipos EstadoTarea y DificultadTarea para representar los estados y dificultades posibles de una tarea.*/
-type EstadoTarea = 'pendiente' | 'en curso' | 'terminada' | 'cancelada';
-type DificultadTarea = 'fácil' | 'medio' | 'difícil';
+export type EstadoTarea = 'pendiente' | 'en curso' | 'terminada' | 'cancelada';
+export type DificultadTarea = 'fácil' | 'medio' | 'difícil';
 /* Definición de la clase Tarea para representar una tarea con propiedades como título, descripción, estado, fecha de creación y dificultad.*/
 export class Tarea {
   private _titulo: string;
@@ -8,9 +8,9 @@ export class Tarea {
   private _estado: EstadoTarea;
   private _fechaCreacion: Date;
   private _dificultad: DificultadTarea;
-/*
-    Constructor de la clase Tarea que inicializa las propiedades con los valores proporcionados y realiza normalización de algunos parámetros.
-  */
+  /*
+      Constructor de la clase Tarea que inicializa las propiedades con los valores proporcionados y realiza normalización de algunos parámetros.
+    */
   constructor(titulo: string, descripcion: string | null, estado: EstadoTarea, dificultad: DificultadTarea) {
     this._titulo = titulo;
     this._descripcion = descripcion || null;

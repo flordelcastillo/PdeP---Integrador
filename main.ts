@@ -1,7 +1,5 @@
-import { Tarea } from './Tarea';
-let tareita = new Tarea("Hola","chau","pendiente","fácil");
+import { menuPrincipal } from './menu';
 
-console.log(tareita.titulo);
-tareita.titulo = "holiooooo";
-console.log(tareita.titulo);
+export const leer = require('prompt-sync')();
 
+menuPrincipal();
