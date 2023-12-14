@@ -36,7 +36,7 @@ export class Tarea {
     }
   }
 
-  editar({ nuevaDescripcion, nuevoEstado, nuevaDificultad }: { nuevaDescripcion?: string, nuevoEstado?: EstadoTarea, nuevaDificultad?: DificultadTarea }): Tarea {
+  editar(nuevaDescripcion: string, nuevoEstado: EstadoTarea, nuevaDificultad: DificultadTarea ): Tarea {
     return new Tarea(
       this._titulo,
       nuevaDescripcion && nuevaDescripcion.trim() !== '' ? nuevaDescripcion : null,

@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.verDetallesTareas = exports.mostrarTareas = exports.mostrarEncabezado = exports.filtrarPorEstado = exports.switchDeMostrarPorEstado = exports.mostrarMenuTareas = void 0;
+exports.editarTarea = exports.verDetallesTareas = exports.mostrarTareas = exports.mostrarEncabezado = exports.filtrarPorEstado = exports.switchDeMostrarPorEstado = exports.mostrarMenuTareas = void 0;
 var arrayTareas_1 = require("./arrayTareas");
 var menu_1 = require("./menu");
 var main_1 = require("./main");
+var agregarTareas_1 = require("./agregarTareas");
 function mostrarMenuTareas() {
     console.clear();
     console.log("  ¿Qué tareas deseas ver?\n");
@@ -91,20 +92,12 @@ function mostrarEstrellas(dificultad) {
             break;
     }
 }
-function verDetallesTareas(tarea) {
-    console.clear(); // Limpia la consola.
-    console.log("Esta es la tarea que elegiste.\n");
-    console.log("  ".concat(tarea.titulo)); // Muestra el título de la tarea.
-    console.log("  ".concat(tarea.descripcion ? tarea.descripcion : '')); // Muestra la descripción si está disponible.
-    console.log("  Estado:      ".concat(tarea.estado)); // Muestra el estado de la tarea.
-    mostrarEstrellas(tarea.dificultad);
-    console.log("  Creaci\u00F3n:    ".concat(tarea.fechaCreacion)); // Muestra la fecha de creación de la tarea.
+function editarOvolver(tarea) {
     console.log("Si deseas editarla, presiona E, o presiona 0 para volver al menú principal");
     var opcion = (0, main_1.leer)("> ");
     switch (opcion.toUpperCase()) {
         case 'E':
-            (0, menu_1.menuPrincipal)();
-            //editarTarea(tarea);
+            editarTarea(tarea);
             break;
         case '0':
             (0, menu_1.menuPrincipal)();
@@ -114,14 +107,30 @@ function verDetallesTareas(tarea) {
             verDetallesTareas(tarea);
             break;
     }
-    /*if (opcion === 'E' || opcion === 'e') {
-      menuPrincipal();
-      //editarTarea(tarea); // Llama al método para editar la tarea si se presiona 'E'.
-    } else if (Number(opcion) == 0) {
-      menuPrincipal(); // Vuelve al menú principal si se presiona '0'.
-    } else {
-      console.log("Opción Incorrecta!");
-      verDetallesTareas(tarea); // Vuelve a mostrar los detalles si la opción no es válida.
-    }*/
+}
+function verDetallesTareas(tarea) {
+    console.clear(); // Limpia la consola.
+    console.log("Esta es la tarea que elegiste.\n");
+    console.log("  ".concat(tarea.titulo)); // Muestra el título de la tarea.
+    console.log("  ".concat(tarea.descripcion ? tarea.descripcion : '')); // Muestra la descripción si está disponible.
+    console.log("  Estado:      ".concat(tarea.estado)); // Muestra el estado de la tarea.
+    mostrarEstrellas(tarea.dificultad);
+    console.log("  Creaci\u00F3n:    ".concat(tarea.fechaCreacion)); // Muestra la fecha de creación de la tarea.
+    editarOvolver(tarea);
 }
 exports.verDetallesTareas = verDetallesTareas;
+function pedirEstado() {
+    var estado = (0, main_1.leer)("3. Estado ([P]endiente / [E]n curso / [T]erminada / [C]ancelada): ").toLowerCase();
+    return estado;
+}
+function editarTarea(tarea) {
+    console.clear(); // Limpia la consola.
+    console.log("Est\u00E1s editando la tarea ".concat(tarea.titulo, ".\n"));
+    console.log("- Si deseas mantener los valores de un atributo, simplemente déjalo en blanco.");
+    console.log("- Si deseas dejar en blanco un atributo, escribe un espacio.\n");
+    tarea.editar((0, agregarTareas_1.pedirDescripcion)(), pedirEstado(), (0, agregarTareas_1.pedirDificultad)());
+    console.log("\n¡Datos guardados!\n");
+    (0, main_1.leer)("Presione cualquier tecla para continuar...");
+    (0, menu_1.menuPrincipal)();
+}
+exports.editarTarea = editarTarea;

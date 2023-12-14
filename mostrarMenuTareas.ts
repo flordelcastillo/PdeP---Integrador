@@ -3,6 +3,8 @@ import { menuPrincipal } from "./menu";
 import { Tarea } from "./Tarea";
 import { leer } from "./main";
 import { DificultadTarea } from "./Tarea";
+import { pedirDescripcion,pedirDificultad } from "./agregarTareas";
+import { EstadoTarea } from "./Tarea";
 
 export function mostrarMenuTareas(): void {
   console.clear();
@@ -96,13 +98,12 @@ function mostrarEstrellas(dificultad: DificultadTarea): void {
   }
 }
 
-function editarOvolver(tarea: Tarea) :void{
+function editarOvolver(tarea: Tarea): void {
   console.log("Si deseas editarla, presiona E, o presiona 0 para volver al menú principal")
   let opcion: string = leer("> ");
   switch (opcion.toUpperCase()) {
     case 'E':
-      menuPrincipal();
-      //editarTarea(tarea);
+      editarTarea(tarea);
       break;
     case '0':
       menuPrincipal();
@@ -124,4 +125,21 @@ export function verDetallesTareas(tarea: Tarea): void {
   console.log(`  Creación:    ${tarea.fechaCreacion}`); // Muestra la fecha de creación de la tarea.
   editarOvolver(tarea);
 }
-                      
+
+function pedirEstado(): EstadoTarea {
+  const estado: EstadoTarea = leer("3. Estado ([P]endiente / [E]n curso / [T]erminada / [C]ancelada): ").toLowerCase() as EstadoTarea;
+  return estado;
+}
+
+
+export function editarTarea(tarea: Tarea): void {
+  console.clear(); // Limpia la consola.
+  console.log(`Estás editando la tarea ${tarea.titulo}.\n`);
+  console.log("- Si deseas mantener los valores de un atributo, simplemente déjalo en blanco.");
+  console.log("- Si deseas dejar en blanco un atributo, escribe un espacio.\n");
+  tarea.editar(pedirDescripcion(),pedirEstado(),pedirDificultad());
+         
+  console.log("\n¡Datos guardados!\n");
+  leer("Presione cualquier tecla para continuar...");
+  menuPrincipal();
+}

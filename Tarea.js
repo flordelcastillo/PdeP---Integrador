@@ -28,8 +28,7 @@ var Tarea = /** @class */ (function () {
                 return 'fácil';
         }
     };
-    Tarea.prototype.editar = function (_a) {
-        var nuevaDescripcion = _a.nuevaDescripcion, nuevoEstado = _a.nuevoEstado, nuevaDificultad = _a.nuevaDificultad;
+    Tarea.prototype.editar = function (nuevaDescripcion, nuevoEstado, nuevaDificultad) {
         return new Tarea(this._titulo, nuevaDescripcion && nuevaDescripcion.trim() !== '' ? nuevaDescripcion : null, nuevoEstado || this._estado, nuevaDificultad || this._dificultad);
     };
     Object.defineProperty(Tarea.prototype, "titulo", {

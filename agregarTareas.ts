@@ -9,7 +9,7 @@ function pedirTitulo(): string {
     return titulo;
 }
 
-function pedirDescripcion(): string {
+export function pedirDescripcion(): string {
     const descripcion: string = leer("2. Ingresa la descripción: ");
     return descripcion;
 }
@@ -19,7 +19,7 @@ function pedirEstado(): EstadoTarea {
     return estado;
 }
 
-function pedirDificultad() : DificultadTarea {
+export function pedirDificultad() : DificultadTarea {
     const dificultad: DificultadTarea = leer("4. Dificultad ([F]ácil / [M]edio / [D]ificil): ").toLowerCase() as DificultadTarea;
     return dificultad;
 }
