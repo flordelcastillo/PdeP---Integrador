@@ -101,14 +101,11 @@ function volverOdetalles(opcion, arrayTarea, encabezado) {
         default:
             // Si la opción es un número válido, llama a la función verDetallesTareas
             var opcionNumero = parseInt(opcion, 10);
-            if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length) {
-                (0, verDetallesTarea_1.verDetallesTareas)(arrayTarea[opcionNumero - 1]);
-            }
-            else {
-                // Si la opción no es válida, muestra un mensaje de error y vuelve a mostrar las tareas
-                console.log("Opción Incorrecta! Por favor, ingresa un número válido.");
-                mostrarTareas(encabezado, arrayTarea);
-            }
+            var isValidOption = !isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length;
+            isValidOption
+                ? (0, verDetallesTarea_1.verDetallesTareas)(arrayTarea[opcionNumero - 1])
+                : (console.log("Opción Incorrecta! Por favor, ingresa un número válido."),
+                    mostrarTareas(encabezado, arrayTarea));
             break;
     }
 }

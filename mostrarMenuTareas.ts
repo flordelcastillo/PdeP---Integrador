@@ -108,16 +108,15 @@ function volverOdetalles(opcion: string, arrayTarea: Tarea[], encabezado: string
             volver("");
             break;
         default:
+            const opcionNumero: number = parseInt(opcion, 10);
+            const isValidOption: boolean = !isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length;
             // Si la opción es un número válido, llama a la función verDetallesTareas
-            const opcionNumero = parseInt(opcion, 10);
-            if (!isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length) {
-                verDetallesTareas(arrayTarea[opcionNumero - 1]);
-            }
-            else {
-                // Si la opción no es válida, muestra un mensaje de error y vuelve a mostrar las tareas
-                console.log("Opción Incorrecta! Por favor, ingresa un número válido.");
-                mostrarTareas(encabezado, arrayTarea);
-            }
+            isValidOption
+                ? verDetallesTareas(arrayTarea[opcionNumero - 1])
+                : (
+                    console.log("Opción Incorrecta! Por favor, ingresa un número válido."),
+                    mostrarTareas(encabezado, arrayTarea)
+                );
             break;
     }
 }
