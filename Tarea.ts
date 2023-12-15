@@ -1,3 +1,9 @@
+/**
+ * Programación Orientada a Objetos: La clase Tarea encapsula propiedades y comportamientos relacionados
+ * con una tarea específica. Utiliza un constructor para inicializar el objeto, tiene métodos privados
+ * para validar el estado y la dificultad, y métodos públicos para acceder y modificar las propiedades.
+ * */
+
 // Definición de tipos personalizados para el estado y la dificultad de la tarea
 export type EstadoTarea = 'pendiente' | 'en curso' | 'terminada' | 'cancelada';
 export type DificultadTarea = 'fácil' | 'medio' | 'difícil';

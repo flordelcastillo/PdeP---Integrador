@@ -1,3 +1,23 @@
+/**
+ * Programación Estructurada: Aunque la función tiene varias secciones y utiliza funciones importadas,
+ *  sigue un flujo estructurado. La lógica está organizada de manera secuencial y utiliza estructuras
+ * de control como switch para manejar diferentes casos.
+ * */
+
+/**
+ * Programación Funcional: La función mostrarEstrellas es un ejemplo de un enfoque funcional,
+ * ya que toma un valor y produce una salida sin efectos secundarios.
+ * Además, la función verDetallesTareas parece seguir un estilo más funcional al pasar la tarea
+ * como parámetro y evitar efectos secundarios directos.
+ * */
+
+/**
+ * Programación Orientada a Objetos: Se utiliza la clase Tarea para representar y manipular objetos de tipo tarea.
+ * La función editarOvolver interactúa con un objeto Tarea y muestra detalles basados en sus propiedades.
+ * También cuenta con encapsulación, las funciones mostrarEstrellas y verDetallesTareas están encapsuladas;
+ * cada una tiene una responsabilidad específica y se puede entender y probar de manera independiente.
+ * */
+
 // Importar funciones necesarias desde otros archivos
 import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { Tarea, DificultadTarea } from "./Tarea";

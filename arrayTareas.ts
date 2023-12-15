@@ -1,3 +1,8 @@
+/**
+ * Programación Orientada a Objetos: Importa una clase Tarea y utiliza instancias de esa clase para
+ * llenar un arreglo (arrayTareas). La función agregarTarea es un método de ese objeto arrayTareas.
+ * */
+
 // Importar la clase Tarea desde el archivo "Tarea"
 import { Tarea } from "./Tarea";
 

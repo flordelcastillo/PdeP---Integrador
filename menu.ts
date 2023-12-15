@@ -1,3 +1,9 @@
+/**
+ * Programación Estructurada: Este código sigue un enfoque estructurado al organizar funciones de manera clara y
+ * utilizar estructuras de control como switch. La función menuPrincipal presenta opciones, y switchDeMenu
+ * maneja la lógica de control de flujo. 
+ */
+
 // Importar funciones necesarias desde otros archivos
 import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { mostrarMenuTareas } from "./mostrarMenuTareas";

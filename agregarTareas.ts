@@ -1,3 +1,18 @@
+/**
+ * Programación Estructurada: La función agregarTareas sigue un flujo estructurado y
+ * utiliza funciones auxiliares para solicitar información al usuario. 
+ * */
+
+/**
+ * Programación Funcional: Las funciones pedirTitulo y pedirDescripcion son funciones puras,
+ * ya que toman un input y devuelven un output sin realizar efectos secundarios.
+ * */
+
+/**
+ * Programación Orientada a Objetos: Se utiliza la clase Tarea para crear instancias de tareas
+ * y gestionar la información relacionada con ellas.
+ * */
+
 // Importar funciones y clases necesarias desde otros archivos
 import { leer, volver } from "./extra";
 import { agregarTarea } from "./arrayTareas";

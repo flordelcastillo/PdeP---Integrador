@@ -1,3 +1,15 @@
+/**
+ * Programación Estructurada: Este código sigue un enfoque principalmente estructurado.
+ * Las funciones volver y borrarPantallayEncabezado están claramente organizadas y cumplen funciones específicas.
+ * La ejecución sigue una secuencia lógica.
+ * */
+
+/** Programación Funcional: Aunque el código no muestra un estilo de programación funcional puro,
+ * se nota el uso de funciones y la ausencia de efectos secundarios significativos.
+ * La función leer está asignada a require('prompt-sync')(), que proporciona una función para leer de manera síncrona,
+ * y console.clear() se utiliza para limpiar la consola. Estos pueden considerarse elementos de un estilo más funcional.
+ * */
+
 // Importar la función menuPrincipal desde el archivo "menu"
 import { menuPrincipal } from './menu';
 

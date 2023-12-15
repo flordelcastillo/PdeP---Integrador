@@ -1,3 +1,20 @@
+/** 
+ * Programación Orientada a Objetos: La función buscarTareas utiliza la clase Tarea
+ * y opera principalmente en instancias de esa clase, lo que sigue el paradigma orientado a objetos.
+ * */
+
+/** 
+ * Programación Funcional: La función buscarTareas utiliza el método filter,
+ * que es una operación funcional para filtrar tareas basadas en una condición.
+ * Además, la función mostrarBusquedas utiliza un enfoque más funcional al manejar
+ * diferentes casos basados en la cantidad de tareas coincidentes.
+ * */
+
+/** 
+ * Programación Estructurada: La estructura general del código sigue un enfoque estructurado,
+ * con funciones que realizan tareas específicas y la secuencia de operaciones claramente definida.
+ * */
+
 // Importar funciones y clases necesarias desde otros archivos
 import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { Tarea } from "./Tarea";

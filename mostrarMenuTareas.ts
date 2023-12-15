@@ -1,3 +1,23 @@
+/** 
+ * Programación Estructurada: El código sigue un enfoque principalmente estructurado al
+ * organizar funciones de manera clara y utilizar estructuras de control como switch.
+ * La ejecución sigue una secuencia de pasos lógica y lineal.
+ * */
+
+/** 
+ * Programación Orientada a Objetos: El código también incluye elementos de programación orientada a objetos,
+ * ya que utiliza la clase Tarea y realiza operaciones en instancias de esa clase.
+ * La función filtrarPorEstado es un ejemplo de cómo se utiliza el paradigma orientado a objetos
+ * para filtrar tareas por estado.
+*/
+
+/**
+ * Programación Funcional: Se utiliza en ciertas partes del código.
+ * Por ejemplo, la función filter en la función filtrarPorEstado se utiliza de manera funcional
+ * para filtrar tareas. Además, hay otras funciones que muestran rasgos de programación funcional,
+ * como forEach y console.log para imprimir las tareas.
+ */
+
 // Importar funciones y clases necesarias desde otros archivos
 import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { arrayTareas } from "./arrayTareas";
@@ -108,7 +128,7 @@ function volverOdetalles(opcion: string, arrayTarea: Tarea[], encabezado: string
             volver("");
             break;
         default:
-            const opcionNumero: number = parseInt(opcion, 10);
+            const opcionNumero: number = parseInt(opcion);
             const isValidOption: boolean = !isNaN(opcionNumero) && opcionNumero >= 1 && opcionNumero <= arrayTarea.length;
             // Si la opción es un número válido, llama a la función verDetallesTareas
             isValidOption
