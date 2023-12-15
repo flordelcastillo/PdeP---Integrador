@@ -6,8 +6,7 @@ var mostrarMenuTareas_1 = require("./mostrarMenuTareas");
 var agregarTareas_1 = require("./agregarTareas");
 var buscarTareas_1 = require("./buscarTareas");
 function menuPrincipal() {
-    console.clear();
-    console.log("¿Qué deseas hacer?\n");
+    (0, main_1.borrarPantallayEncabezado)("¿Qué deseas hacer?");
     console.log("  [1] Ver mis tareas.");
     console.log("  [2] Buscar una tarea.");
     console.log("  [3] Agregar una tarea.");
@@ -29,8 +28,7 @@ function switchDeMenu(opcion) {
         case 0:
             process.exit(0);
         default:
-            console.log("Opción Incorrecta!");
-            menuPrincipal();
+            (0, main_1.volver)("Opción Incorrecta!");
             break;
     }
 }

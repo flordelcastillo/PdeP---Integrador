@@ -1,11 +1,10 @@
-import { leer } from "./main";
+import { leer, volver, borrarPantallayEncabezado } from "./main";
 import { mostrarMenuTareas } from "./mostrarMenuTareas";
 import { agregarTareas } from "./agregarTareas";
 import { buscarTareas } from "./buscarTareas";
 
 export function menuPrincipal(): void {
-    console.clear();
-    console.log("¿Qué deseas hacer?\n");
+    borrarPantallayEncabezado("¿Qué deseas hacer?")
     console.log("  [1] Ver mis tareas.");
     console.log("  [2] Buscar una tarea.");
     console.log("  [3] Agregar una tarea.");
@@ -27,8 +26,7 @@ export function switchDeMenu(opcion: string): void {
         case 0:
             process.exit(0);
         default:
-            console.log("Opción Incorrecta!");
-            menuPrincipal();
+            volver("Opción Incorrecta!");
             break;
     }
 }

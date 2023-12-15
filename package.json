@@ -1,7 +1,8 @@
 {
-  "name": "integrador",
+  "name": "combinando-lo-aprendido",
   "version": "1.0.0",
-  "main": "todolist.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,10 +13,5 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github.com/flordelcastillo/PdeP---Integrador.git"
-  },
-  "description": ""
+  }
 }

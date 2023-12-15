@@ -1,8 +1,7 @@
+import { leer, volver } from "./main";
 import { agregarTarea } from "./arrayTareas";
 import { Tarea } from "./Tarea";
-import { menuPrincipal } from "./menu";
 import { DificultadTarea, EstadoTarea } from "./Tarea";
-import { leer } from "./main";
 
 function pedirTitulo(): string {
     const titulo: string = leer("1. Ingresa el Título: ");
@@ -19,7 +18,7 @@ function pedirEstado(): EstadoTarea {
     return estado;
 }
 
-export function pedirDificultad() : DificultadTarea {
+export function pedirDificultad(): DificultadTarea {
     const dificultad: DificultadTarea = leer("4. Dificultad ([F]ácil / [M]edio / [D]ificil): ").toLowerCase() as DificultadTarea;
     return dificultad;
 }
@@ -30,7 +29,5 @@ export function agregarTareas(): void {
     const nuevaTarea = new Tarea(pedirTitulo(), pedirDescripcion(), pedirEstado(), pedirDificultad());
     agregarTarea(nuevaTarea);
 
-    console.log("¡Datos guardados!");
-    leer("Presione cualquier tecla para continuar...");
-    menuPrincipal();
+    volver("\n¡Datos guardados!\n");
 }

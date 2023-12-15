@@ -1,11 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tarea = void 0;
-/* Definición de la clase Tarea para representar una tarea con propiedades como título, descripción, estado, fecha de creación y dificultad.*/
 var Tarea = /** @class */ (function () {
-    /*
-        Constructor de la clase Tarea que inicializa las propiedades con los valores proporcionados y realiza normalización de algunos parámetros.
-      */
     function Tarea(titulo, descripcion, estado, dificultad) {
         this._titulo = titulo;
         this._descripcion = descripcion || null;
@@ -29,15 +25,12 @@ var Tarea = /** @class */ (function () {
         }
     };
     Tarea.prototype.editar = function (nuevaDescripcion, nuevoEstado, nuevaDificultad) {
-        // Actualiza la descripción si se proporciona una nueva descripción no vacía.
         if (nuevaDescripcion.trim() !== '') {
             this.descripcion = nuevaDescripcion;
         }
-        // Actualiza el estado si se proporciona un nuevo estado no vacío.
         if (nuevoEstado.trim() !== '') {
             this.estado = this.validarEstado(nuevoEstado);
         }
-        // Actualiza la dificultad si se proporciona una nueva dificultad no vacía.
         if (nuevaDificultad.trim() !== '') {
             this.dificultad = this.validarDificultad(nuevaDificultad);
         }

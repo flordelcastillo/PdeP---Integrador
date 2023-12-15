@@ -1,25 +1,23 @@
-import { leer } from "./main";
-import { menuPrincipal } from "./menu";
+import { leer, volver, borrarPantallayEncabezado } from "./main";
 import { Tarea } from "./Tarea";
+import { arrayTareas } from "./arrayTareas";
 import { mostrarTareas } from "./mostrarMenuTareas";
 
-import { arrayTareas } from "./arrayTareas";
-
-export function buscarTareas(): void {
-    console.clear(); // Limpia la consola.
-    console.log("Introduce el título de una Tarea para buscarla:");
-    const palabraClave = leer("> ");
-                                                        
-    const tareasCoincidentes = arrayTareas.filter((tarea: Tarea) =>
-        tarea.titulo.toLowerCase().includes(palabraClave.toLowerCase())
-    );
+function mostrarBusquedas(tareasCoincidentes: Tarea[], palabraClave: string): void {
     switch (tareasCoincidentes.length) {
         case 0:
-            console.log('No hay tareas relacionadas con la búsqueda.');
-            leer("Presione cualquier tecla para continuar...");
-            menuPrincipal();
+            volver('\nNo hay tareas relacionadas con la búsqueda.\n');
             break;
         default:
             mostrarTareas(' relacionadas con la palabra' + palabraClave + ': ', tareasCoincidentes);
     }
+}
+
+export function buscarTareas(): void {
+    borrarPantallayEncabezado("Introduce el título de una Tarea para buscarla:");
+    const palabraClave: string = leer("> ");
+    const tareasCoincidentes: Tarea[] = arrayTareas.filter((tarea: Tarea) =>
+        tarea.titulo.toLowerCase().includes(palabraClave.toLowerCase())
+    );
+    mostrarBusquedas(tareasCoincidentes, palabraClave);
 }
