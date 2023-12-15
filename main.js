@@ -8,7 +8,7 @@ exports.leer = require('prompt-sync')();
 // Función para volver al menú principal
 function volver(encabezado) {
     // Mostrar el encabezado y esperar a que el usuario presione cualquier tecla antes de volver al menú principal
-    (0, exports.leer)("".concat(encabezado, "\nPresione cualquier tecla para continuar..."));
+    (0, exports.leer)("".concat(encabezado, "\nPresione enter para continuar..."));
     // Llamar a la función menuPrincipal para volver al menú principal
     (0, menu_1.menuPrincipal)();
 }
