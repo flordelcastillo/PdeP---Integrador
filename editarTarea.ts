@@ -1,11 +1,11 @@
-// Importar funciones necesarias desde el archivo "main" y otras dependencias
-import { leer, volver, borrarPantallayEncabezado } from "./main";
+// Importar funciones necesarias desde el archivo "extra" y otras dependencias
+import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { Tarea, EstadoTarea } from "./Tarea";
 import { pedirDescripcion, pedirDificultad } from "./agregarTareas";
 
 // Función para solicitar y retornar el estado de la tarea desde el usuario
 function pedirEstado(): EstadoTarea {
-    // Utiliza la función leer del archivo "main" para obtener el estado desde el usuario,
+    // Utiliza la función leer del archivo "extra" para obtener el estado desde el usuario,
     // y lo convierte a minúsculas para manejar entradas en mayúsculas o minúsculas
     const estado: EstadoTarea = leer("3. Estado ([P]endiente / [E]n curso / [T]erminada / [C]ancelada): ").toLowerCase() as EstadoTarea;
     return estado;

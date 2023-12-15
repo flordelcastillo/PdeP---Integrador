@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verDetallesTareas = void 0;
 // Importar funciones necesarias desde otros archivos
-var main_1 = require("./main");
+var extra_1 = require("./extra");
 var editarTarea_1 = require("./editarTarea");
 // Función para mostrar el nivel de dificultad de una tarea en forma de estrellas
 function mostrarEstrellas(dificultad) {
@@ -23,7 +23,7 @@ function mostrarEstrellas(dificultad) {
 function editarOvolver(tarea) {
     // Solicita al usuario elegir entre editar la tarea o volver al menú principal
     console.log("Si deseas editarla, presiona E, o presiona 0 para volver al menú principal");
-    var opcion = (0, main_1.leer)("> ");
+    var opcion = (0, extra_1.leer)("> ");
     // Utiliza un switch para manejar las opciones del usuario
     switch (opcion.toUpperCase()) {
         case 'E':
@@ -32,11 +32,11 @@ function editarOvolver(tarea) {
             break;
         case '0':
             // Vuelve al menú principal
-            (0, main_1.volver)("");
+            (0, extra_1.volver)("");
             break;
         default:
             // Maneja una opción incorrecta mostrando un mensaje y volviendo a mostrar los detalles de la tarea
-            (0, main_1.leer)("Opción Incorrecta!\nPresione enter para continuar...");
+            (0, extra_1.leer)("Opción Incorrecta!\nPresione enter para continuar...");
             verDetallesTareas(tarea);
             break;
     }
@@ -44,7 +44,7 @@ function editarOvolver(tarea) {
 // Función principal para mostrar los detalles de una tarea
 function verDetallesTareas(tarea) {
     // Borra la pantalla y muestra un encabezado informativo
-    (0, main_1.borrarPantallayEncabezado)("Esta es la tarea que elegiste.");
+    (0, extra_1.borrarPantallayEncabezado)("Esta es la tarea que elegiste.");
     // Muestra diferentes detalles de la tarea utilizando console.log
     console.log("  ".concat(tarea.titulo)); // Muestra el título de la tarea.
     console.log("  ".concat(tarea.descripcion ? tarea.descripcion : '')); // Muestra la descripción si está disponible.

@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mostrarTareas = exports.mostrarMenuTareas = void 0;
 // Importar funciones y clases necesarias desde otros archivos
-var main_1 = require("./main");
+var extra_1 = require("./extra");
 var arrayTareas_1 = require("./arrayTareas");
 var verDetallesTarea_1 = require("./verDetallesTarea");
 // Función principal para mostrar el menú de tareas
 function mostrarMenuTareas() {
     // Borra la pantalla y muestra un encabezado con las opciones disponibles
-    (0, main_1.borrarPantallayEncabezado)("¿Qué tareas deseas ver?");
+    (0, extra_1.borrarPantallayEncabezado)("¿Qué tareas deseas ver?");
     // Muestra las opciones disponibles en el menú de tareas
     console.log("  [1] Todas.");
     console.log("  [2] Pendientes.");
@@ -16,7 +16,7 @@ function mostrarMenuTareas() {
     console.log("  [4] Terminadas.");
     console.log("  [0] Volver");
     // Llama a la función switchDeMostrarPorEstado para manejar la opción ingresada por el usuario
-    switchDeMostrarPorEstado((0, main_1.leer)("> "));
+    switchDeMostrarPorEstado((0, extra_1.leer)("> "));
 }
 exports.mostrarMenuTareas = mostrarMenuTareas;
 // Función para manejar las opciones del menú de tareas
@@ -25,7 +25,7 @@ function switchDeMostrarPorEstado(opcion) {
     switch (Number(opcion)) {
         case 0:
             // Si la opción es 0, vuelve al menú principal
-            (0, main_1.volver)("");
+            (0, extra_1.volver)("");
             break;
         case 1:
             // Si la opción es 1, muestra todas las tareas
@@ -65,7 +65,7 @@ function mostrarTareas(encabezado, tareasParaMostrar) {
 exports.mostrarTareas = mostrarTareas;
 // Función para mostrar un encabezado específico
 function mostrarEncabezado(encabezado) {
-    (0, main_1.borrarPantallayEncabezado)("Estas son todas tus tareas".concat(encabezado));
+    (0, extra_1.borrarPantallayEncabezado)("Estas son todas tus tareas".concat(encabezado));
 }
 // Función para manejar el caso de tareas vacías o mostrar las tareas
 function vacioOmostrar(arrayTarea, encabezado) {
@@ -73,7 +73,7 @@ function vacioOmostrar(arrayTarea, encabezado) {
     switch (arrayTarea.length) {
         case 0:
             // Si no hay tareas, vuelve al menú principal y muestra un mensaje informativo
-            (0, main_1.volver)('No hay tareas disponibles.');
+            (0, extra_1.volver)('No hay tareas disponibles.');
             break;
         default:
             // Si hay tareas, muestra cada tarea y pregunta si el usuario desea ver los detalles de alguna
@@ -88,7 +88,7 @@ function vacioOmostrar(arrayTarea, encabezado) {
 function preguntaIrDetalles(arrayTarea, encabezado) {
     console.log("\n¿Deseas ver los detalles de alguna?\nIntroduce el número para verlo o 0 para volver");
     // Llama a la función volverOdetalles para manejar la opción ingresada por el usuario
-    volverOdetalles((0, main_1.leer)("> "), arrayTarea, encabezado);
+    volverOdetalles((0, extra_1.leer)("> "), arrayTarea, encabezado);
 }
 // Función para volver al menú principal o ver los detalles de una tarea
 function volverOdetalles(opcion, arrayTarea, encabezado) {
@@ -96,7 +96,7 @@ function volverOdetalles(opcion, arrayTarea, encabezado) {
     switch (Number(opcion)) {
         case 0:
             // Si la opción es 0, vuelve al menú principal
-            (0, main_1.volver)("");
+            (0, extra_1.volver)("");
             break;
         default:
             // Si la opción es un número válido, llama a la función verDetallesTareas

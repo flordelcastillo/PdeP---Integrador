@@ -2,21 +2,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.switchDeMenu = exports.menuPrincipal = void 0;
 // Importar funciones necesarias desde otros archivos
-var main_1 = require("./main");
+var extra_1 = require("./extra");
 var mostrarMenuTareas_1 = require("./mostrarMenuTareas");
 var agregarTareas_1 = require("./agregarTareas");
 var buscarTareas_1 = require("./buscarTareas");
 // Función para mostrar el menú principal de la aplicación
 function menuPrincipal() {
     // Borra la pantalla y muestra un encabezado con las opciones disponibles
-    (0, main_1.borrarPantallayEncabezado)("¿Qué deseas hacer?");
+    (0, extra_1.borrarPantallayEncabezado)("¿Qué deseas hacer?");
     // Muestra las opciones disponibles en el menú principal
     console.log("  [1] Ver mis tareas.");
     console.log("  [2] Buscar una tarea.");
     console.log("  [3] Agregar una tarea.");
     console.log("  [0] Salir.");
     // Llama a la función switchDeMenu para manejar la opción ingresada por el usuario
-    switchDeMenu((0, main_1.leer)("> "));
+    switchDeMenu((0, extra_1.leer)("> "));
 }
 exports.menuPrincipal = menuPrincipal;
 // Función para manejar las opciones del menú principal
@@ -40,7 +40,7 @@ function switchDeMenu(opcion) {
             process.exit(0);
         default:
             // Si la opción no es válida, muestra un mensaje de error y vuelve al menú principal
-            (0, main_1.volver)("Opción Incorrecta!");
+            (0, extra_1.volver)("Opción Incorrecta!");
             break;
     }
 }

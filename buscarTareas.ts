@@ -1,5 +1,5 @@
 // Importar funciones y clases necesarias desde otros archivos
-import { leer, volver, borrarPantallayEncabezado } from "./main";
+import { leer, volver, borrarPantallayEncabezado } from "./extra";
 import { Tarea } from "./Tarea";
 import { arrayTareas } from "./arrayTareas";
 import { mostrarTareas } from "./mostrarMenuTareas";

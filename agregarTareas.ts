@@ -1,5 +1,5 @@
 // Importar funciones y clases necesarias desde otros archivos
-import { leer, volver } from "./main";
+import { leer, volver } from "./extra";
 import { agregarTarea } from "./arrayTareas";
 import { Tarea } from "./Tarea";
 import { DificultadTarea, EstadoTarea } from "./Tarea";
