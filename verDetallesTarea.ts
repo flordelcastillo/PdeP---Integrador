@@ -63,6 +63,18 @@ function editarOvolver(tarea: Tarea): void {
     }
 }
 
+function mostrarFechaFormateada(fecha: Date): string {
+    // Obtiene el día, mes y año por separado
+    const dia: number = fecha.getDate();
+    const mes: number = fecha.getMonth() + 1; // Los meses comienzan desde 0 (enero) hasta 11 (diciembre)
+    const año: number = fecha.getFullYear();
+
+    // Formatea la fecha como 'DD/MM/YYYY'
+    const fechaFormateada: string = `${dia}/${mes}/${año}`;
+
+    return fechaFormateada;
+}
+
 // Función principal para mostrar los detalles de una tarea
 export function verDetallesTareas(tarea: Tarea): void {
     // Borra la pantalla y muestra un encabezado informativo
@@ -76,7 +88,7 @@ export function verDetallesTareas(tarea: Tarea): void {
     // Muestra el nivel de dificultad en forma de estrellas utilizando la función anterior
     mostrarEstrellas(tarea.dificultad);
 
-    console.log(`  Creación:    ${tarea.fechaCreacion}`); // Muestra la fecha de creación de la tarea.
+    console.log(`  Creación:    ${mostrarFechaFormateada(tarea.fechaCreacion)}`); // Muestra la fecha de creación de la tarea.
 
     // Llama a la función para editar la tarea o volver al menú principal
     editarOvolver(tarea);

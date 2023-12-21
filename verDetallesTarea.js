@@ -58,6 +58,15 @@ function editarOvolver(tarea) {
             break;
     }
 }
+function mostrarFechaFormateada(fecha) {
+    // Obtiene el día, mes y año por separado
+    var dia = fecha.getDate();
+    var mes = fecha.getMonth() + 1; // Los meses comienzan desde 0 (enero) hasta 11 (diciembre)
+    var año = fecha.getFullYear();
+    // Formatea la fecha como 'DD/MM/YYYY'
+    var fechaFormateada = "".concat(dia, "/").concat(mes, "/").concat(año);
+    return fechaFormateada;
+}
 // Función principal para mostrar los detalles de una tarea
 function verDetallesTareas(tarea) {
     // Borra la pantalla y muestra un encabezado informativo
@@ -68,7 +77,7 @@ function verDetallesTareas(tarea) {
     console.log("  Estado:      ".concat(tarea.estado)); // Muestra el estado de la tarea.
     // Muestra el nivel de dificultad en forma de estrellas utilizando la función anterior
     mostrarEstrellas(tarea.dificultad);
-    console.log("  Creaci\u00F3n:    ".concat(tarea.fechaCreacion)); // Muestra la fecha de creación de la tarea.
+    console.log("  Creaci\u00F3n:    ".concat(mostrarFechaFormateada(tarea.fechaCreacion))); // Muestra la fecha de creación de la tarea.
     // Llama a la función para editar la tarea o volver al menú principal
     editarOvolver(tarea);
 }
