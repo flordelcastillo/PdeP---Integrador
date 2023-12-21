@@ -1,6 +1,6 @@
 /** 
  * Programación Orientada a Objetos: La función editarTarea opera principalmente
- * en instancias de la clase Tarea y utiliza el método editar, lo cual sigue el paradigma orientado a objetos.
+ * en instancias de la clase Tarea y utiliza el método editar.
  * */
 
 /** 

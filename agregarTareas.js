@@ -1,6 +1,18 @@
 "use strict";
+/**
+ * Programación Estructurada: La función agregarTareas sigue un flujo estructurado y
+ * utiliza funciones auxiliares para solicitar información al usuario.
+ * */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.agregarTareas = exports.pedirDificultad = exports.pedirDescripcion = void 0;
+/**
+ * Programación Funcional: Las funciones pedirTitulo y pedirDescripcion son funciones puras,
+ * ya que toman un input y devuelven un output sin realizar efectos secundarios.
+ * */
+/**
+ * Programación Orientada a Objetos: Se utiliza la clase Tarea para crear instancias de tareas
+ * y gestionar la información relacionada con ellas.
+ * */
 // Importar funciones y clases necesarias desde otros archivos
 var extra_1 = require("./extra");
 var arrayTareas_1 = require("./arrayTareas");

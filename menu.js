@@ -1,4 +1,9 @@
 "use strict";
+/**
+ * Programación Estructurada: Este código sigue un enfoque estructurado al organizar funciones de manera clara y
+ * utilizar estructuras de control como switch. La función menuPrincipal presenta opciones, y switchDeMenu
+ * maneja la lógica de control de flujo.
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.switchDeMenu = exports.menuPrincipal = void 0;
 // Importar funciones necesarias desde otros archivos

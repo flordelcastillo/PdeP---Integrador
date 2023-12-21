@@ -1,6 +1,18 @@
 "use strict";
+/**
+ * Programación Orientada a Objetos: La función editarTarea opera principalmente
+ * en instancias de la clase Tarea y utiliza el método editar, lo cual sigue el paradigma orientado a objetos.
+ * */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.editarTarea = void 0;
+/**
+ * Programación Funcional: La función utiliza funciones importadas (leer, volver) que pueden considerarse
+ * parte de un enfoque funcional. Además, se emplea la función pedirEstado que realiza una operación simple y pura.
+ * */
+/**
+ * Programación Estructurada: La estructura general del código sigue un enfoque estructurado,
+ * con funciones que realizan tareas específicas y la secuencia de operaciones claramente definida.
+ * */
 // Importar funciones necesarias desde el archivo "extra" y otras dependencias
 var extra_1 = require("./extra");
 var agregarTareas_1 = require("./agregarTareas");

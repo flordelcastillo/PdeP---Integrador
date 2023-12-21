@@ -1,6 +1,21 @@
 "use strict";
+/**
+ * Programación Orientada a Objetos: La función buscarTareas utiliza la clase Tarea
+ * y opera principalmente en instancias de esa clase, lo que sigue el paradigma orientado a objetos.
+ * */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buscarTareas = void 0;
+/**
+ * Programación Funcional: La función buscarTareas utiliza el método filter,
+ * que es una operación funcional para filtrar tareas basadas en una condición, es una funcion de orden superior.
+ * Además, la función mostrarBusquedas utiliza un enfoque más funcional al manejar
+ * diferentes casos basados en la cantidad de tareas coincidentes.
+ * El array tareas coincidentes
+ * */
+/**
+ * Programación Estructurada: La estructura general del código sigue un enfoque estructurado,
+ * con funciones que realizan tareas específicas y la secuencia de operaciones claramente definida.
+ * */
 // Importar funciones y clases necesarias desde otros archivos
 var extra_1 = require("./extra");
 var arrayTareas_1 = require("./arrayTareas");

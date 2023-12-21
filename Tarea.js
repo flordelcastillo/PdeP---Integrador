@@ -1,4 +1,9 @@
 "use strict";
+/**
+ * Programación Orientada a Objetos: La clase Tarea encapsula propiedades y comportamientos relacionados
+ * con una tarea específica. Utiliza un constructor para inicializar el objeto, tiene métodos privados
+ * para validar el estado y la dificultad, y métodos públicos para acceder y modificar las propiedades.
+ * */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tarea = void 0;
 // Definición de la clase Tarea
@@ -21,12 +26,14 @@ var Tarea = /** @class */ (function () {
     // Método privado para validar la dificultad de la tarea
     Tarea.prototype.validarDificultad = function (dificultad) {
         switch (dificultad) {
-            case 'fácil':
+            case 'facil':
+                return 'fácil'; // Normaliza 'facil' a 'fácil'.
             case 'medio':
-            case 'difícil':
-                return dificultad;
+                return 'medio'; // Mantiene 'medio' sin cambios.
+            case 'dificil':
+                return 'difícil'; // Normaliza 'dificil' a 'difícil'.
             default:
-                return 'fácil';
+                return 'fácil'; // Si la dificultad no es válida, establece 'facil' por defecto.
         }
     };
     // Método para editar los atributos de la tarea

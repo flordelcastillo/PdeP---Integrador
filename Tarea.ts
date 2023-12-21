@@ -34,14 +34,16 @@ export class Tarea {
     }
 
     // Método privado para validar la dificultad de la tarea
-    private validarDificultad(dificultad: DificultadTarea): DificultadTarea {
+    private validarDificultad(dificultad: string): DificultadTarea {
         switch (dificultad) {
-            case 'fácil':
+            case 'facil':
+                return 'fácil'; // Normaliza 'facil' a 'fácil'.
             case 'medio':
-            case 'difícil':
-                return dificultad;
+                return 'medio'; // Mantiene 'medio' sin cambios.
+            case 'dificil':
+                return 'difícil'; // Normaliza 'dificil' a 'difícil'.
             default:
-                return 'fácil';
+                return 'fácil'; // Si la dificultad no es válida, establece 'facil' por defecto.
         }
     }
 
