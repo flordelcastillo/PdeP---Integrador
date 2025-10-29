@@ -32,7 +32,7 @@ function mostrarBusquedas(tareasCoincidentes: Tarea[], palabraClave: string): vo
             break;
         default:
             // Si hay coincidencias, llama a la función mostrarTareas para mostrar los detalles de las tareas
-            mostrarTareas(' relacionadas con la palabra' + palabraClave + ': ', tareasCoincidentes);
+            mostrarTareas(' relacionadas con la palabra ' + palabraClave + ': ', tareasCoincidentes);
     }
 }
 
