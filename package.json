@@ -2,7 +2,7 @@
   "name": "combinando-lo-aprendido",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.4"
+    "@types/node": "^24.9.2",
+    "typescript": "^5.9.3"
   }
 }
